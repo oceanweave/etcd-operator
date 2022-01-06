@@ -1,0 +1,16 @@
+domain: my.domain
+layout:
+- go.kubebuilder.io/v3
+projectName: etcd-operator
+repo: etcd-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: my.domain
+  group: etcd.improbable.io
+  kind: EtcdCluster
+  path: etcd-operator/api/v1alpha1
+  version: v1alpha1
+version: "3"
