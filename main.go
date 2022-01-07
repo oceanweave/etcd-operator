@@ -92,6 +92,10 @@ func main() {
 		setupLog.Error(err, "unable to create controller", "controller", "EtcdPeer")
 		os.Exit(1)
 	}
+	if err = (&etcdimprobableiov1alpha1.EtcdCluster{}).SetupWebhookWithManager(mgr); err != nil {
+		setupLog.Error(err, "unable to create webhook", "webhook", "EtcdCluster")
+		os.Exit(1)
+	}
 	//+kubebuilder:scaffold:builder
 
 	if err := mgr.AddHealthzCheck("healthz", healthz.Ping); err != nil {
