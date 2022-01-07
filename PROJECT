@@ -13,4 +13,13 @@ resources:
   kind: EtcdCluster
   path: etcd-operator/api/v1alpha1
   version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: my.domain
+  group: etcd.improbable.io
+  kind: EtcdPeer
+  path: etcd-operator/api/v1alpha1
+  version: v1alpha1
 version: "3"
